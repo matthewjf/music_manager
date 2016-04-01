@@ -7,7 +7,7 @@
 
 <h3>Albums</h3>
 <% if admin_user? %>
-  <%= (link_to 'add album', new_band_album_url(@band)) %>
+  <%= link_to 'add album', new_band_album_url(@band) %>
   <br>
 <% end %>
 

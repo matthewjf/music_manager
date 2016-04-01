@@ -17,6 +17,10 @@
 </table>
 
 <h3>Tracks</h3>
+<% if admin_user? %>
+  <%= link_to 'add track', new_album_track_url(@album) %>
+  <br>
+<% end %>
 <ul>
   <% @album.tracks.each do |track| %>
     <li><%= link_to track.name, track_url(track) %></li>
