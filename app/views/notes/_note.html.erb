@@ -1,4 +1,6 @@
-<%= note.user.email %> :
-<%= note.text %>
-<%= button_to 'delete', track_note_url(track_id: @track.id ,id: note.id), method: :delete %>
+<b><%= note.user.email %></b>:
+<%= strip_tags(note.text) %>
+<% if admin_user? || is_current_user?(note.user) %>
+  <%= link_to 'delete', track_note_url(track_id: @track.id ,id: note.id), method: :delete %>
+<% end %>
 <br>

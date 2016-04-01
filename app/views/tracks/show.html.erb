@@ -1,8 +1,10 @@
 <h1>Track: <%= @track.name %></h1>
 
-<%= link_to 'edit', edit_track_url(@track) %> |
-<%= link_to 'delete', @track, method: :delete %>
-<br><br>
+<% if admin_user? %>
+  <%= link_to 'edit', edit_track_url(@track) %> |
+  <%= link_to 'delete', @track, method: :delete %>
+  <br><br>
+<% end %>
 
 <table>
   <tr>
@@ -19,7 +21,7 @@
   </tr>
 </table>
 <br>
-<h3>Lyrics</h3>
+<b>Lyrics</b>
 <%= ugly_lyrics(@track.lyrics) %>
 
 <h2>Notes</h2>

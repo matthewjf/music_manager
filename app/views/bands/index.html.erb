@@ -1,6 +1,8 @@
 <h1>Bands</h1>
-<%= link_to 'add band', new_band_url %>
-<br>
+<% if admin_user? %>
+  <%= link_to 'add band', new_band_url %>
+  <br>
+<% end %>
 
 <ol>
   <%= render @bands %>

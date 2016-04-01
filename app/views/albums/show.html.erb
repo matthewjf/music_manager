@@ -1,8 +1,9 @@
 <h1>Album: <%= @album.name %></h1>
-
-<%= link_to 'edit', edit_album_url(@album) %> |
-<%= link_to 'delete', @album, method: :delete %>
-<br>
+<% if admin_user? %>
+  <%= link_to 'edit', edit_album_url(@album) %> |
+  <%= link_to 'delete', @album, method: :delete %>
+  <br>
+<% end %>
 
 <table>
   <tr>
