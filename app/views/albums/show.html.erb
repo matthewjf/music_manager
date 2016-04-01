@@ -1,0 +1,23 @@
+<h1>Album: <%= @album.name %></h1>
+
+<%= link_to 'edit', edit_album_url(@album) %> |
+<%= link_to 'delete', @album, method: :delete %>
+<br>
+
+<table>
+  <tr>
+    <th>Band:</th>
+    <td><%= link_to @album.band.name, band_url(@album.band) %><td>
+  </tr>
+  <tr>
+    <th>Type:</th>
+    <td><%= @album.alb_t %><td>
+  </tr>
+</table>
+
+<h3>Tracks</h3>
+<ul>
+  <% @album.tracks.each do |track| %>
+    <li><%= link_to track.name, track_url(track) %></li>
+  <% end %>
+</ul>

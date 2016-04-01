@@ -1,0 +1,12 @@
+<header>
+  <%= link_to 'home', root_url %> |
+  <% if admin_user? %>
+    <%= link_to 'users', users_url %> |
+  <% end %>
+  <% if logged_in? %>
+    <%= link_to 'account', user_url(id: current_user.id ) %> |
+    <%= link_to 'logout', logout_url, method: :delete %>
+  <% else %>
+    <%= link_to 'login', login_url %> or <%= link_to 'sign up', signup_url %>
+  <% end %>
+</header>

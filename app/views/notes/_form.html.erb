@@ -1,0 +1,19 @@
+<% if logged_in? %>
+  <form action='<%= track_notes_url(@track.id) %>' method="post">
+    <input
+      type="hidden"
+      name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+
+    <label>
+      New note
+      <br>
+      <textarea name='note[text]'><%= note.text %></textarea>
+    </label>
+    <br>
+
+    <%= button_to 'add note', track_notes_url(@track.id) %>
+  </form>
+<% else %>
+ <%= link_to 'login', login_url %> or <%= link_to 'sign up', signup_url %> to add a note
+<% end %>

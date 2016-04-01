@@ -1,0 +1,4 @@
+<%= note.user.email %> :
+<%= note.text %>
+<%= button_to 'delete', track_note_url(track_id: @track.id ,id: note.id), method: :delete %>
+<br>
