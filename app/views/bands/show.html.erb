@@ -1,13 +1,11 @@
-<h1>Band: <%= @band.name %></h1>
-
 <% if admin_user? %>
   <%= link_to 'edit', edit_band_url(@band) %> |
   <%= link_to 'delete', @band, method: :delete %>
-  <br>
 <% end %>
 
-<h3>Albums</h3>
+<h1>Band: <%= @band.name %></h1>
 
+<h3>Albums</h3>
 <% if admin_user? %>
   <%= (link_to 'add album', new_band_album_url(@band)) %>
   <br>

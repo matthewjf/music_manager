@@ -1,10 +1,9 @@
-<h1>Track: <%= @track.name %></h1>
-
 <% if admin_user? %>
   <%= link_to 'edit', edit_track_url(@track) %> |
   <%= link_to 'delete', @track, method: :delete %>
-  <br><br>
 <% end %>
+
+<h1>Track: <%= @track.name %></h1>
 
 <table>
   <tr>
