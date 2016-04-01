@@ -12,7 +12,7 @@
     </label>
     <br>
 
-    <%= button_to 'add note', track_notes_url(@track.id) %>
+    <%= button_to 'add note', track_notes_url(@track.id), class: "btn btn-primary" %>
   </form>
 <% else %>
  <%= link_to 'login', login_url %> or <%= link_to 'sign up', signup_url %> to add a note
