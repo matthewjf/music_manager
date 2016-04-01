@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   before_action :admin_user_only, only: :index
+  before_action only: [:edit, :update] do
+    is_current_user?(User.find(params[:id]))
+  end
+
 
   def index
     @users = User.all

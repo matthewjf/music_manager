@@ -1,5 +1,8 @@
+<% if is_current_user?(@user) %>
+  <%= link_to 'edit', edit_user_url, user: @user %>
+<% end %>
+
 <h1>your account</h1>
-<%= link_to 'edit', edit_user_url, user: @user %>
 
 <h3>Email</h3>
 <%= @user.email %>

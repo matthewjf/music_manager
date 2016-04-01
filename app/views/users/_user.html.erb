@@ -1,5 +1,5 @@
 <li>
-  <%= user.email %> |
+  <%= link_to user.email, user_url(user) %> |
   <% if user.admin %>
     <%= link_to 'deadmin', deadmin_user_url(user), method: :get %>
   <% else %>
